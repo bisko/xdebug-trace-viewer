@@ -1,0 +1,95 @@
+.TraceEntry {
+	border-bottom: 1px solid darkgray;
+	padding: 5px 0;
+}
+
+.TraceEntry-data {
+	display: flex;
+	justify-content: flex-end;
+}
+
+
+.TraceEntry-data div {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.TraceEntry div {
+	box-sizing: border-box;
+}
+
+.TraceEntry-metric {
+	width: 150px;
+	text-align: right;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+
+}
+
+.TraceEntry-args, .TraceEntry-return {
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	max-width: 300px;
+	overflow: hidden;
+}
+
+.TraceEntry-args {
+	color: green;
+}
+
+.TraceEntry-func {
+	flex-grow: 1;
+	justify-content: flex-start;
+}
+
+.TraceEntry-funcname {
+	font-weight: bold;
+}
+
+.TraceEntry-return {
+	color: goldenrod;
+	font-style: italic;
+	overflow: hidden;
+	height: 100%;
+}
+
+.TraceEntry-children {
+	border-left: 1px solid lightgray;
+	margin-top: 2px;
+}
+
+.TraceEntry-children .TraceEntry:last-child {
+	border-bottom: none;
+}
+
+.TraceEntry-children.collapsed, .TraceEntry-children-leftpad {
+	cursor: pointer;
+}
+
+.TraceEntry-children.collapsed {
+	height: 5px;
+	background: darkgray;
+	margin: 5px 0 0;
+}
+
+.TraceEntry-children {
+	display: flex;
+	justify-content: flex-start;
+}
+
+.TraceEntry-children-leftpad {
+	width: 20px;
+	flex-shrink: 0;
+}
+
+.TraceEntry-children-leftpad:hover {
+	background: lightgray;
+}
+
+.TraceEntry-children-container {
+	flex-grow: 1;
+}
+
+.TraceEntry-metric-percentage {
+	color: darkgray;
+}
