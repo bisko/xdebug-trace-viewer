@@ -3,6 +3,10 @@
 	padding: 5px 0;
 }
 
+.TraceEntry.headerEntry {
+	border-bottom: 3px solid lightgrey;
+}
+
 .TraceEntry-data {
 	display: flex;
 	justify-content: flex-end;

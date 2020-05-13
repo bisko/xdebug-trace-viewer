@@ -13,6 +13,7 @@ class App extends Component {
 		traceData: [],
 		timeFilterInput: "",
 		functionFilterInput: "",
+		hasFilters: false,
 		filterTime: 0,
 		filterFunction: "",
 	};
@@ -78,7 +79,7 @@ class App extends Component {
 	shouldHighlightEntry = ( entry ) => {
 		return (
 			( this.state.filterTime && entry.timeDiff >= this.state.filterTime )
-			|| ( this.state.filterFunction && entry.name.indexOf( this.state.filterFunction ) !== - 1 )
+			|| ( this.state.filterFunction && entry.name.toLowerCase().indexOf( this.state.filterFunction.toLowerCase() ) !== - 1 )
 		);
 	};
 	expandTree = () => {
@@ -113,6 +114,7 @@ class App extends Component {
 		this.setState( {
 			filterTime: parseFloat( this.state.timeFilterInput ),
 			filterFunction: this.state.functionFilterInput,
+			hasFilters: this.state.timeFilterInput || this.state.functionFilterInput,
 		}, this.highlightEntries );
 	};
 
@@ -159,26 +161,43 @@ class App extends Component {
 						)}
 					</Dropzone>
 				)}
-				<div className="filters">
-					<label htmlFor="function-filter">Filter by function</label>
-					<input id="function-filter" name="function-filter" type="text"
-						   onChange={this.onChangeFilterFunction}/>
-					<label htmlFor="time-filter">Filter by time</label>
-					<input id="time-filter" name="time-filter" type="text" onChange={this.onChangeFilterTime}/>
-					<button onClick={this.applyFilters}>Apply filters</button>
-				</div>
+				{this.state.isReady && (
+					<div className="filters">
+						<label htmlFor="function-filter">Filter by function</label>
+						<input id="function-filter" name="function-filter" type="text"
+							   onChange={this.onChangeFilterFunction}/>
+						<label htmlFor="time-filter">Filter by time</label>
+						<input id="time-filter" name="time-filter" type="text" onChange={this.onChangeFilterTime}/>
+						<button onClick={this.applyFilters}>Apply filters</button>
+					</div>
+				)}
 				{this.state.isReady && (
 					<div className="entries">
+						<div className="TraceEntry headerEntry">
+							<div className="TraceEntry-data">
+								<div className="TraceEntry-func">
+									Function name
+								</div>
+								<div className="TraceEntry-metric">
+									Time (seconds)
+								</div>
+
+								<div className="TraceEntry-metric">
+									Memory (bytes)
+								</div>
+							</div>
+						</div>
 						{map( this.state.traceData, ( entry ) => {
 							return this.renderEntry( entry );
 						} )}
 					</div>
 				)}
-
-				<div className="HighlightedNav">
-					<button onClick={this.onPrevHighlight}>&laquo; Prev Highlight</button>
-					<button onClick={this.onNextHighlight}>Next Highlight &raquo;</button>
-				</div>
+				{this.state.hasFilters && (
+					<div className="HighlightedNav">
+						<button onClick={this.onPrevHighlight}>&laquo; Prev Highlight</button>
+						<button onClick={this.onNextHighlight}>Next Highlight &raquo;</button>
+					</div> )
+				}
 			</div>
 		);
 	}

@@ -3,6 +3,10 @@ html, body, #root, .App {
   width: 100%;
 }
 
+button, input {
+  padding: 5px;
+}
+
 .App {
   padding: 10px;
   font-size: 12px;
@@ -14,13 +18,30 @@ html, body, #root, .App {
  */
 
 .TraceViewDropzone {
-  background: red;
   display: flex;
-  flex-grow: 1;
-  flex-shrink: 1;
-
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  justify-content: center;
+  cursor: pointer;
+}
+.TraceViewDropzone p {
+  top: 50%;
+  position: relative;
+  font-size: 25px;
 }
 
+.filters {
+  padding-bottom: 10px;
+  border-bottom: 3px solid lightgrey;
+  margin-bottom: 30px;
+}
+
+.filters input {
+  margin: 0 15px 0 10px;
+}
 .isHighlighted {
   background-color: rgba(255, 234, 0, 0.54) !important;
 }
@@ -32,6 +53,5 @@ html, body, #root, .App {
 }
 
 .HighlightedNav button {
-  padding: 5px;
   margin: 0 10px;
 }
