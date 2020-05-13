@@ -1,4 +1,37 @@
+html, body, #root, .App {
+  height: 100%;
+  width: 100%;
+}
+
 .App {
   padding: 10px;
   font-size: 12px;
+  box-sizing: border-box;
+}
+
+/**
+ * Dropzone styling
+ */
+
+.TraceViewDropzone {
+  background: red;
+  display: flex;
+  flex-grow: 1;
+  flex-shrink: 1;
+
+}
+
+.isHighlighted {
+  background-color: rgba(255, 234, 0, 0.54) !important;
+}
+
+.HighlightedNav {
+  position: fixed;
+  bottom: 10px;
+  right: 2px;
+}
+
+.HighlightedNav button {
+  padding: 5px;
+  margin: 0 10px;
 }

@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
+import classNames from 'classnames';
 
 import './TraceEntry.css';
 
 class TraceEntry extends Component {
 
 	getChildContainer = () => {
-		if ( ! this.props.entry.children.length ) {
+		if ( !this.props.entry.children.length ) {
 			return null;
 		}
 
-		if ( ! this.props.entry.isExpanded ) {
+		if ( !this.props.entry.isExpanded ) {
 			return (
 				<div
 					className="TraceEntry-children collapsed"
@@ -53,7 +54,6 @@ class TraceEntry extends Component {
 		return + ( Math.round( number + "e+5" ) + "e-5" );
 	};
 
-
 	render() {
 		const entry = this.props.entry;
 
@@ -76,9 +76,16 @@ class TraceEntry extends Component {
 			}
 		}
 
+		const bgStyle = {};
+		bgStyle.backgroundColor = `rgba(255, 0, 0, ${timePercent / 100})`;
+
+		const entryClasses = classNames( "TraceEntry-data", {
+			isHighlighted: entry.isHighlighted,
+		} );
+
 		return (
 			<div className="TraceEntry">
-				<div className="TraceEntry-data">
+				<div className={entryClasses} style={bgStyle}>
 					<div className="TraceEntry-func" title={entry.file + ':' + entry.line}>
 						<div className="TraceEntry-funcname">{entry.name}</div>
 						(
