@@ -1,13 +1,13 @@
 {
-  "main.css": "/xdebug-trace-viewer/static/css/main.570fb629.chunk.css",
-  "main.js": "/xdebug-trace-viewer/static/js/main.100fbd74.chunk.js",
-  "main.js.map": "/xdebug-trace-viewer/static/js/main.100fbd74.chunk.js.map",
+  "main.css": "/xdebug-trace-viewer/static/css/main.cfa54974.chunk.css",
+  "main.js": "/xdebug-trace-viewer/static/js/main.b74526a5.chunk.js",
+  "main.js.map": "/xdebug-trace-viewer/static/js/main.b74526a5.chunk.js.map",
   "runtime~main.js": "/xdebug-trace-viewer/static/js/runtime~main.a4546500.js",
   "runtime~main.js.map": "/xdebug-trace-viewer/static/js/runtime~main.a4546500.js.map",
   "static/js/2.cb6e0747.chunk.js": "/xdebug-trace-viewer/static/js/2.cb6e0747.chunk.js",
   "static/js/2.cb6e0747.chunk.js.map": "/xdebug-trace-viewer/static/js/2.cb6e0747.chunk.js.map",
   "index.html": "/xdebug-trace-viewer/index.html",
-  "precache-manifest.5b4a47b2b74e7c7587d49f73a36ed238.js": "/xdebug-trace-viewer/precache-manifest.5b4a47b2b74e7c7587d49f73a36ed238.js",
+  "precache-manifest.81a2ce20c1e68265e3f23f346c678b46.js": "/xdebug-trace-viewer/precache-manifest.81a2ce20c1e68265e3f23f346c678b46.js",
   "service-worker.js": "/xdebug-trace-viewer/service-worker.js",
-  "static/css/main.570fb629.chunk.css.map": "/xdebug-trace-viewer/static/css/main.570fb629.chunk.css.map"
+  "static/css/main.cfa54974.chunk.css.map": "/xdebug-trace-viewer/static/css/main.cfa54974.chunk.css.map"
 }
